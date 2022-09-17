@@ -1,14 +1,25 @@
+import React from "react";
 import Sugestoes from "./Sugestoes";
 
 function Usuarios() {
+  const [nome, setNome] = React.useState("Anonimo")
+  const [nomePerfil, setNomePerfil] = React.useState("Anonimo")
+
+  function perguntarNome() {
+    let promptNome = prompt("Qual o seu nome?")
+    let promptNomePerfil = prompt("Qual o nome do seu perfil?")
+    promptNome !== "" ? setNome(promptNome) : setNome("Nome inválido")
+    promptNomePerfil !== "" ? setNomePerfil(promptNomePerfil) : setNomePerfil("Nome inválido")
+  }
+
   return (
-    <div class="usuario">
-      <img src="assets/img/catanacomics.svg" />
-      <div class="texto">
-        <strong>catanacomics</strong>
+    <div className="usuario">
+      <img src="assets/img/catanacomics.svg" alt="imagem usuário"/>
+      <div className="texto">
+        <strong>{nomePerfil}</strong>
         <span>
-          Catana
-          <ion-icon name="pencil"></ion-icon>
+          {nome}
+          <ion-icon name="pencil" onClick={perguntarNome} ></ion-icon>
         </span>
       </div>
     </div>
