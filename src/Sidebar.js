@@ -1,7 +1,7 @@
 import React from "react";
 import Sugestoes from "./Sugestoes";
 
-function Usuarios() {
+function Usuario() {
   const [nome, setNome] = React.useState("Anonimo")
   const [nomePerfil, setNomePerfil] = React.useState("Anonimo")
   const [imagemPerfil, setImagemPerfil] = React.useState("assets/img/usuario-anonimo.png")
@@ -35,7 +35,7 @@ function Usuarios() {
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <Usuarios />
+      <Usuario />
       <Sugestoes />
       <div className="links">
         Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
